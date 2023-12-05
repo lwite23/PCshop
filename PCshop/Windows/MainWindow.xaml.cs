@@ -19,10 +19,30 @@ namespace PCshop
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
+    { 
+        public TableName currentTable;
+
         public MainWindow()
         {
+
             InitializeComponent();
+            AppFrame.frameMain = MainFrame;
+            MainFrame.Navigate(new Views.Tovars());
+        }
+
+        private void Фильтрация_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+
         }
     }
 }

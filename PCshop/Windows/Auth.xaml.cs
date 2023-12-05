@@ -10,19 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PCshop
+namespace PCshop.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для Vhod.xaml
+    /// Логика взаимодействия для Auth.xaml
     /// </summary>
-    public partial class Vhod : Page
+    public partial class Auth : Window
     {
-        public Vhod()
+        public Auth()
         {
             InitializeComponent();
+            AppFrame.frameAuth = AuthFrame;
+            AuthFrame.Navigate(new Vhod());
         }
     }
 }
