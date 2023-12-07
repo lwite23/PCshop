@@ -1,0 +1,32 @@
+﻿<Page x:Class="PCshop.Views.korotAddEdit"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PCshop.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="korotAddEdit">
+    <Border>
+        
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,2" EndPoint="1,1">
+                <GradientStop Color="Aqua" Offset="0.1"/>
+
+                <GradientStop Color="Blue" Offset="3"/>
+
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock x:Name="TBName" Text="Введите название"/>
+                    <TextBox x:Name="TBShortName" Width="188" Height="35"/>
+                </StackPanel>
+                <Button Margin="10" Content="Сохранить" Click="BtnSave_Click" Width="113"/>
+            </StackPanel>
+
+            
+        </Grid>
+    </Border>
+</Page>

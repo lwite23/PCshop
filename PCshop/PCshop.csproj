@@ -100,12 +100,29 @@
     <Compile Include="Users.cs">
       <DependentUpon>PCshop.tt</DependentUpon>
     </Compile>
+    <Compile Include="Views\korot.xaml.cs">
+      <DependentUpon>korot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\korotAddEdit.xaml.cs">
+      <DependentUpon>korotAddEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Tovars.xaml.cs">
       <DependentUpon>Tovars.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Vhod.xaml.cs">
       <DependentUpon>Vhod.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ychet.xaml.cs">
+      <DependentUpon>ychet.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\korot.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\korotAddEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Tovars.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -130,6 +147,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\Vhod.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ychet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
