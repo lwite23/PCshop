@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PCshop"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="900">
     <Border Background="#78D6C6">
 
         <Grid>
@@ -15,9 +15,9 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Image Grid.Row="1" Width="79" HorizontalAlignment="Left" Margin="10,0,0,0" Source="/Images/iconpc.png"/>
-            <TextBox  Width="208" FontSize="18" HorizontalAlignment="Left" Margin="414,22,0,38" TextWrapping="Wrap" Grid.Row="1" Visibility="Visible" Cursor="Hand"/>
-            <ComboBox HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="95" SelectionChanged="ComboBox_SelectionChanged" IsEditable="True" IsReadOnly="True" Text="Сортировка" Margin="677,50,0,0"/>
-            <ComboBox Background="#FFCC6600" Name="Фильтрация" HorizontalAlignment="Left" Margin="677,11,0,0" Grid.Row="1" VerticalAlignment="Top" Width="95" Text="Фильтрация" BorderBrush="#FFA73939" SelectionChanged="Фильтрация_SelectionChanged" IsReadOnly="True" IsEditable="True">
+            <TextBox  Width="208" FontSize="18" HorizontalAlignment="Left" Margin="308,25,0,35" TextWrapping="Wrap" Grid.Row="1" Visibility="Visible" Cursor="Hand"/>
+            <ComboBox HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="95" SelectionChanged="ComboBox_SelectionChanged" IsEditable="True" IsReadOnly="True" Text="Сортировка" Margin="566,13,0,0"/>
+            <ComboBox Background="#FFCC6600" Name="Фильтрация" HorizontalAlignment="Left" Margin="566,51,0,0" Grid.Row="1" VerticalAlignment="Top" Width="95" Text="Фильтрация" BorderBrush="#FFA73939" SelectionChanged="Фильтрация_SelectionChanged" IsReadOnly="True" IsEditable="True">
                 <ComboBoxItem Content="Процессоры"/>
                 <ComboBoxItem Content="Материнские платы"/>
                 <ComboBoxItem Content="Видеокарты"/>
@@ -32,8 +32,11 @@
 
             </ComboBox>
             <Frame Grid.Row="2" NavigationUIVisibility="Hidden" Name="MainFrame" Navigated="MainFrame_Navigated"/>
-            <TextBlock HorizontalAlignment="Left"  Margin="348,20,0,0" Grid.Row="1" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" RenderTransformOrigin="-0.563,0.495"><Run Language="ru-ru" Text="Поиск:"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left"  Margin="242,21,0,0" Grid.Row="1" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" RenderTransformOrigin="-0.563,0.495"><Run Language="ru-ru" Text="Поиск:"/></TextBlock>
             <TextBlock HorizontalAlignment="Left" FontWeight="Bold" Margin="114,22,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="30" Grid.RowSpan="2"><Run Text="PCshop"/><LineBreak/><Run/></TextBlock>
+            <Button Content="Вернуться ко входу" FontSize="12" Background="white" HorizontalAlignment="Left" Margin="762,11,0,0" Grid.Row="1" VerticalAlignment="Top" Height="28" Width="128" Click="Button_Click"/>
+            <Label Content="Пользователь:" FontSize="15" HorizontalAlignment="Left" Margin="666,50,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="780,53,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="23" Width="115"/>
         </Grid>
     </Border>
 </Window>

@@ -11,7 +11,8 @@ namespace PCshop
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.IO;
+
     public partial class Tovar
     {
         public int Article { get; set; }
@@ -23,7 +24,23 @@ namespace PCshop
         public Nullable<int> Availability { get; set; }
         public Nullable<int> IDCategories { get; set; }
         public Nullable<int> IDProvider { get; set; }
-    
+
+        public string correctimage
+        {
+            get
+            {
+                string path = Path.Combine(Directory.GetParent(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName)).FullName, @"Images\");
+                if (String.IsNullOrEmpty(image) || String.IsNullOrWhiteSpace(image) || image == null)
+                {
+                    return path + "iconpc.png";
+                }
+                else
+                {
+                    return path + image;
+                }
+            }
+        }
+
         public virtual Categories Categories { get; set; }
         public virtual Provider Provider { get; set; }
     }

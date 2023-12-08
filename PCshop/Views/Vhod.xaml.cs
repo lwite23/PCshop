@@ -19,7 +19,9 @@ namespace PCshop
 
         private void ResetCaptchaButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            MainWindow user= new MainWindow();
+            user.Show();
+            Window.GetWindow(this).Close();
         }
 
 
@@ -38,17 +40,36 @@ namespace PCshop
                     if (currentUser.Login.Equals(TBLogin.Text) && currentUser.Password.Equals(TBPassword.Text))
                     {
 
-                        if (currentUser.RoleID == 1 || currentUser.RoleID == 2)
+                        if (currentUser.RoleID == 1)
                         {
-                            MainWindow admin = new MainWindow(); //currentUser.userID
+                            Windows.ychet admin = new Windows.ychet(); //currentUser.userID
                             admin.Show();
                         }
                         else
                         {
-                            MessageBox.Show("Введите корректные логин и пароль", "Ошибка авторизации");
+                            if (currentUser.Login.Equals(TBLogin.Text) && currentUser.Password.Equals(TBPassword.Text))
+                            {
+
+                                if (currentUser.RoleID == 2)
+                                {
+                                    MainWindow user = new MainWindow(); //currentUser.userID
+                                    user.Show();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Введите корректные логин и пароль", "Ошибка авторизации");
+                                    
+                                }
+                                Window.GetWindow(this).Close();
+                            }
+
                         }
-                        Window.GetWindow(this).Close();
+                        
+                       ;
                     }
+                
+
+                    
 
                 }
 

@@ -91,9 +91,6 @@
     <Compile Include="Roles.cs">
       <DependentUpon>PCshop.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>PCshop.tt</DependentUpon>
-    </Compile>
     <Compile Include="Tovar.cs">
       <DependentUpon>PCshop.tt</DependentUpon>
     </Compile>
@@ -173,11 +170,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <EntityDeploy Include="PCshop.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PCshop.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="packages.config" />
     <None Include="PCshop.edmx.diagram">
       <DependentUpon>PCshop.edmx</DependentUpon>
     </None>
@@ -190,17 +187,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\iconpc.png" />
-    <Content Include="PCshop.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PCshop.Context.cs</LastGenOutput>
-      <DependentUpon>PCshop.edmx</DependentUpon>
-    </Content>
-    <Content Include="PCshop.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PCshop.edmx</DependentUpon>
-      <LastGenOutput>PCshop.cs</LastGenOutput>
-    </Content>
+    <Resource Include="Images\1.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Refresh.png" />
@@ -210,6 +197,21 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bp1.jpg" />
+    <Resource Include="Images\iconpc.png" />
+    <Resource Include="Images\pc1.jpg" />
+    <Content Include="PCshop.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PCshop.edmx</DependentUpon>
+      <LastGenOutput>PCshop.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PCshop.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PCshop.edmx</DependentUpon>
+      <LastGenOutput>PCshop.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

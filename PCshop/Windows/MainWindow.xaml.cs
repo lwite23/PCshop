@@ -44,5 +44,12 @@ namespace PCshop
         {
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Windows.Auth user = new Windows.Auth();
+            user.Show();
+            Window.GetWindow(this).Close();
+        }
     }
 }

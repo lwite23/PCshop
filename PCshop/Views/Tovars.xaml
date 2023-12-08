@@ -5,35 +5,69 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PCshop.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="880"
       Title="Tovars">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="1"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="1" Name="Tovarsq" SelectedIndex="-1">
+        <ListView Height="500" Width="880" Grid.Row="1" Name="Tovarsq" SelectedIndex="-1">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border>
                         <Grid HorizontalAlignment="Center">
+                            <Border Width="865" BorderBrush="#12486B" Background="#F5FCCD" BorderThickness="2" CornerRadius="8,8,8,8">
 
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Width="100" Text="{Binding images}" TextAlignment="Center"/>
-                                <TextBlock Width="100" Text="{Binding Article}" TextAlignment="Center"/>
                                 <StackPanel Orientation="Vertical">
-                                <TextBlock Width="300" Text="{Binding TovarName}"  TextAlignment="Center"/>
-                                <TextBlock Width="300" Text="{Binding Description}"  TextAlignment="Center" TextWrapping="Wrap"/>
-                                <TextBlock Width="300" Text="{Binding Warranty}"  TextAlignment="Center"/>
+                                        <Border Margin="5 5 0 0" Width="120" Height="120" BorderBrush="#12486B" BorderThickness="2" CornerRadius="8,8,8,8">
+                                            <Image HorizontalAlignment="Center" VerticalAlignment="Center" Height="120" 
+                               Width="120"
+                               Source="{Binding correctimage}"
+                               
+                               Name="PCimage"/>
+                                        </Border>
+                                        <TextBlock Width="100" FontSize="20" FontWeight="Bold" Margin="0,0,0,0" Text="{Binding Article}" TextAlignment="Center"/>
                                 </StackPanel>
-                                <TextBlock Width="100" Text="{Binding Price}"  TextAlignment="Center"/>
-                                <TextBlock Width="30" Text="{Binding Avalilability}"  TextAlignment="Center"/>
-                                <StackPanel Orientation="Vertical">
-                                    <TextBlock Width="100" Text="{Binding Categories.Category}"  TextAlignment="Center"/>
-                                    <TextBlock Width="100" Text="{Binding Provider.ProviderName}"  TextAlignment="Center"/>
+                                <StackPanel Margin="10" Orientation="Vertical">
+                                <TextBlock Width="350" FontSize="17" FontWeight="SemiBold" Text="{Binding TovarName}" Margin="0,0,0,15" TextAlignment="Left"/>
+                                        <Border Width="350" Height="100" BorderBrush="#12486B" Background="White" BorderThickness="2" CornerRadius="8,8,8,8">
+                                    <StackPanel Orientation="Vertical">
+                                    
+                                            <TextBlock Width="100" FontSize="15" Text="Описание:" TextAlignment="Left" />
+                                            <TextBlock Width="300" FontSize="13" Text="{Binding Description}"  TextAlignment="Left" Margin="10,0,0,15" TextWrapping="Wrap"/>
+                                        
+                                        </StackPanel>
+                                        </Border>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontSize="15" Width="75" Text="Гарантия:" TextAlignment="Left" Margin="10,0,0,0"/>
+                                            <TextBlock FontSize="15" Width="80"  Text="{Binding Warranty}" Margin="10,0,0,0" TextAlignment="Justify"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                 
+                                    <TextBlock Width="30" Text="{Binding Avalilability}"  TextAlignment="Center"/>
+                                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Width="250">
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,0,40" >
+                                            <TextBlock Text="Категория:  " FontSize="15" ></TextBlock> 
+                                            <TextBlock Width="150" FontSize="15" Text="{Binding Categories.Category}"  TextAlignment="Left"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal"  >
+                                            <TextBlock FontSize="15" Text="Поставщик:  "/>
+                                            <TextBlock Width="100" FontSize="15" Text="{Binding Provider.ProviderName}"  TextAlignment="Left"/>
+                                        </StackPanel>
+                                    
                                 </StackPanel>
-                            </StackPanel>
+                                    <StackPanel Width="60" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock FontSize="20" FontWeight="DemiBold"  Width="60" Text="{Binding Price}"  TextAlignment="Center"/>
+                                        
+                                    </StackPanel>
+                                    <StackPanel Width="15" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center"> 
+                                        <TextBlock FontSize="20" FontWeight="DemiBold" Width="15" Text="₽" Margin="0,0,0,0"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
                         </Grid>
                     </Border>
                 </DataTemplate>

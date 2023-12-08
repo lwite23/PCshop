@@ -16,6 +16,6 @@ namespace PCshop
     }
     internal class AppData
     {
-        public static PSshopEntities db = new PSshopEntities();
+        public static PCshopEntities db = new PCshopEntities();
     }
 }

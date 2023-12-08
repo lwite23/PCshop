@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PCshop.Windows
@@ -19,9 +20,14 @@ namespace PCshop.Windows
     /// </summary>
     public partial class ychet : Window
     {
+        public TableName currentTable;
+
         public ychet()
         {
+
             InitializeComponent();
+            AppFrame.frameMain = MainFrame;
+            MainFrame.Navigate(new Views.Tovars());
         }
 
         private void Фильтрация_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -34,14 +40,16 @@ namespace PCshop.Windows
 
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
         {
 
         }
 
-        private void MainFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Windows.Auth user = new Windows.Auth();
+            user.Show();
+            Window.GetWindow(this).Close();
         }
     }
 }
