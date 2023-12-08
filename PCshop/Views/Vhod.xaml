@@ -33,40 +33,14 @@
 
                 <StackPanel Orientation="Horizontal">
 
-                    <Button Click="BtnSignIn_Click"
-                        Content="Войти" Height="40" Width="160" Margin="10,10,10,2" RenderTransformOrigin="0.519,1.071"/>
+                    <Button Click="BtnSignIn_Click" 
+                        Content="Войти" Height="30" Width="160" Margin="10,0,10,2" RenderTransformOrigin="0.519,1.071"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBox Height="40" Width="160" Margin="10" FontSize="24"  IsEnabled="False" FontFamily="Chiller" FontWeight="Bold" Name="CaptchaText" Text="ABCDef" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF65778D" TextAlignment="Center" TextChanged="CaptchaText_TextChanged">
-                        <TextBox.Background>
-                            <ImageBrush ImageSource="/Images/CaptchaBack.png"/>
-                        </TextBox.Background>
-                        <TextBox.Style>
-                            <Style  TargetType="{x:Type TextBox}" >
-                                <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
-                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="{x:Type TextBox}">
-                                            <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
-                                                <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </TextBox.Style>
-
-                    </TextBox>
-
-
-                </StackPanel>
+                <StackPanel Orientation="Horizontal"/>
                 <StackPanel Orientation="Horizontal">
 
-                    <Button  Name="ResetCaptchaButton"  Margin="10,0,0,0" Width="160" HorizontalContentAlignment="Center" Click="ResetCaptchaButton_Click" FontFamily="segoe ui" FontSize="13" FontWeight="Normal">
-                        <StackPanel>
-                            <Image Source="/Images/Refresh.png" Stretch="Uniform" Height="30"/>
-                        </StackPanel>
+                    <Button  Content="Войти как гость" Name="ResetCaptchaButton" Height="30" Margin="10,5,0,0" Width="160" HorizontalContentAlignment="Center" Click="ResetCaptchaButton_Click" FontFamily="segoe ui" FontSize="13" FontWeight="Normal">
+                        
                     </Button>
                 </StackPanel>
             </StackPanel>

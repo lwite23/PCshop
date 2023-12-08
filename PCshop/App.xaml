@@ -5,9 +5,9 @@
              StartupUri="/Windows/Auth.xaml">
     <Application.Resources>
         <Style TargetType="TextBox">
-            <Setter Property="Padding" Value="5"/>
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Margin" Value="1"/>
+            <Setter Property="FontSize" Value="13"/>
             <Setter Property="MinHeight" Value="20"/>
             <Setter Property="MinWidth" Value="100"/>
             <Setter Property="Template">
@@ -27,12 +27,12 @@
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
                                 <Setter Property="BorderBrush" TargetName="border" Value="#909090"/>
-                                <Setter Property="Foreground" Value="Red" />
+                                <Setter Property="Foreground" Value="DarkGray" />
                                 <Setter Property="FontWeight" Value="Bold" />
                             </Trigger>
                             <Trigger Property="IsFocused" Value="true">
-                                <Setter Property="Foreground" Value="Blue" />
-                                <Setter Property="BorderBrush" TargetName="border" Value="Blue"/>
+                                <Setter Property="Foreground" Value="#12486B" />
+                                <Setter Property="BorderBrush" TargetName="border" Value="#12486B"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -66,6 +66,7 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+
 
     </Application.Resources>
 </Application>

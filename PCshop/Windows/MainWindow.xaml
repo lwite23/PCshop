@@ -6,15 +6,8 @@
         xmlns:local="clr-namespace:PCshop"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Border>
-        <Border.Background>
-            <LinearGradientBrush StartPoint="0,2" EndPoint="1,1">
-                <GradientStop Color="Aqua" Offset="0.1"/>
+    <Border Background="#78D6C6">
 
-                <GradientStop Color="Blue" Offset="3"/>
-
-            </LinearGradientBrush>
-        </Border.Background>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition  Height="5"/>
@@ -24,7 +17,7 @@
             <Image Grid.Row="1" Width="79" HorizontalAlignment="Left" Margin="10,0,0,0" Source="/Images/iconpc.png"/>
             <TextBox  Width="208" FontSize="18" HorizontalAlignment="Left" Margin="414,22,0,38" TextWrapping="Wrap" Grid.Row="1" Visibility="Visible" Cursor="Hand"/>
             <ComboBox HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="95" SelectionChanged="ComboBox_SelectionChanged" IsEditable="True" IsReadOnly="True" Text="Сортировка" Margin="677,50,0,0"/>
-            <ComboBox Background="#FFCC6600" Name="Фильтрация" HorizontalAlignment="Left" Margin="677,11,0,0" Grid.Row="1" VerticalAlignment="Top" Width="95" Text="Фильтрация" IsEditable="True" IsReadOnly="True" BorderBrush="#FFA73939" SelectionChanged="Фильтрация_SelectionChanged">
+            <ComboBox Background="#FFCC6600" Name="Фильтрация" HorizontalAlignment="Left" Margin="677,11,0,0" Grid.Row="1" VerticalAlignment="Top" Width="95" Text="Фильтрация" BorderBrush="#FFA73939" SelectionChanged="Фильтрация_SelectionChanged" IsReadOnly="True" IsEditable="True">
                 <ComboBoxItem Content="Процессоры"/>
                 <ComboBoxItem Content="Материнские платы"/>
                 <ComboBoxItem Content="Видеокарты"/>
@@ -39,8 +32,8 @@
 
             </ComboBox>
             <Frame Grid.Row="2" NavigationUIVisibility="Hidden" Name="MainFrame" Navigated="MainFrame_Navigated"/>
-            <TextBlock HorizontalAlignment="Left" Margin="375,22,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="25"><Run Language="ru-ru" Text="Поиск:"/></TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="130,27,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22"><Run Text="PCshop"/><LineBreak/><Run/></TextBlock>
+            <TextBlock HorizontalAlignment="Left"  Margin="348,20,0,0" Grid.Row="1" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" RenderTransformOrigin="-0.563,0.495"><Run Language="ru-ru" Text="Поиск:"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" FontWeight="Bold" Margin="114,22,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="30" Grid.RowSpan="2"><Run Text="PCshop"/><LineBreak/><Run/></TextBlock>
         </Grid>
     </Border>
 </Window>

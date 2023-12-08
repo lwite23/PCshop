@@ -23,5 +23,25 @@ namespace PCshop.Windows
         {
             InitializeComponent();
         }
+
+        private void Фильтрация_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void MainFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+
+        }
     }
 }
