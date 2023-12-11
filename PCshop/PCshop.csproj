@@ -97,6 +97,9 @@
     <Compile Include="Users.cs">
       <DependentUpon>PCshop.tt</DependentUpon>
     </Compile>
+    <Compile Include="Views\Addedittovar.xaml.cs">
+      <DependentUpon>Addedittovar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\korot.xaml.cs">
       <DependentUpon>korot.xaml</DependentUpon>
     </Compile>
@@ -112,6 +115,10 @@
     <Compile Include="Windows\ychet.xaml.cs">
       <DependentUpon>ychet.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\Addedittovar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\korot.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
