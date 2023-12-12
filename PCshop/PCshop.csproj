@@ -106,11 +106,17 @@
     <Compile Include="Views\korotAddEdit.xaml.cs">
       <DependentUpon>korotAddEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Tovaradmin.xaml.cs">
+      <DependentUpon>Tovaradmin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Tovars.xaml.cs">
       <DependentUpon>Tovars.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Vhod.xaml.cs">
       <DependentUpon>Vhod.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\addeditwnd.xaml.cs">
+      <DependentUpon>addeditwnd.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ychet.xaml.cs">
       <DependentUpon>ychet.xaml</DependentUpon>
@@ -127,7 +133,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Tovaradmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Tovars.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\addeditwnd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

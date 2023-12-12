@@ -11,7 +11,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="50"/>
+            
         </Grid.RowDefinitions>
         <ListView Height="500" Width="880" Grid.Row="1" Name="Tovarsq" SelectedIndex="-1" d:ItemsSource="{d:SampleData ItemCount=5}">
             <ListView.ItemTemplate>
@@ -68,6 +69,7 @@
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
+
                         </Grid>
                     </Border>
                 </DataTemplate>

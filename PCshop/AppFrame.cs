@@ -11,5 +11,6 @@ namespace PCshop
     {
         public static Frame frameMain;
         public static Frame frameAuth;
+        public static Frame frameWnd;
     }
 }

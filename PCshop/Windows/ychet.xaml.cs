@@ -27,7 +27,7 @@ namespace PCshop.Windows
 
             InitializeComponent();
             AppFrame.frameMain = MainFrame;
-            MainFrame.Navigate(new Views.Tovars());
+            MainFrame.Navigate(new Views.Tovaradmin());
         }
 
         private void Фильтрация_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -49,6 +49,15 @@ namespace PCshop.Windows
         {
             Windows.Auth user = new Windows.Auth();
             user.Show();
+            Window.GetWindow(this).Close();
+        }
+
+        
+
+        private void DtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+           Windows.addeditwnd addeditwnd = new Windows.addeditwnd();
+            addeditwnd.Show();
             Window.GetWindow(this).Close();
         }
     }

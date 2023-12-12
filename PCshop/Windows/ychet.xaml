@@ -14,6 +14,7 @@
                 <RowDefinition  Height="5"/>
                 <RowDefinition Height="85"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="50"></RowDefinition>
             </Grid.RowDefinitions>
             <Image Grid.Row="1" Width="79" HorizontalAlignment="Left" Margin="10,0,0,0" Source="/Images/iconpc.png"/>
             <TextBox  Width="208" FontSize="18" HorizontalAlignment="Left" Margin="334,22,0,38" TextWrapping="Wrap" Grid.Row="1" Visibility="Visible" Cursor="Hand"/>
@@ -36,6 +37,7 @@
             <TextBlock HorizontalAlignment="Left"  Margin="268,20,0,0" Grid.Row="1" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" RenderTransformOrigin="-0.563,0.495"><Run Language="ru-ru" Text="Поиск:"/></TextBlock>
             <TextBlock HorizontalAlignment="Left" FontWeight="Bold" Margin="114,22,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="30" Grid.RowSpan="2"><Run Text="PCshop"/><LineBreak/><Run/></TextBlock>
             <Button Content="Вернуться ко входу" FontSize="12" Background="white" HorizontalAlignment="Left" Margin="762,11,0,0" Grid.Row="1" VerticalAlignment="Top" Height="28" Width="128" Click="Button_Click"/>
+            <Button Grid.Row="3" Background="White" HorizontalAlignment="Left" Margin="566,5,0,5" Content="Добавить товар" Name="BtnAdd" Click="DtnAdd_Click" Width="242"/>
         </Grid>
     </Border>
 </Window>

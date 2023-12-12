@@ -32,6 +32,10 @@ namespace PCshop.Views
         {
             InitializeComponent();
             this.WindowTitle = "Добавление товара";
+            var provider = AppData.db.Provider.Select(p => p.ProviderName).ToList();
+            TBpost.ItemsSource = provider;
+            var category = AppData.db.Categories.Select(p => p.Category).ToList();
+            TBcat.ItemsSource = category;
         }
 
         public Addedittovar(Tovar tovar) 
@@ -44,11 +48,18 @@ namespace PCshop.Views
             TBgar.Text = currentTovar.Warranty;
             TBprice.Text = currentTovar.Price.ToString();
             TBdes.Text = currentTovar.Description;
+            TBcat.SelectedItem = currentTovar.Categories.Category;
+            TBpost.SelectedItem = currentTovar.Provider.ProviderName;
             if(currentTovar.image != null)
             {
                 _mainImageData = File.ReadAllBytes(path + currentTovar.image);
                 tovarimg.Source = new ImageSourceConverter().ConvertFrom(_mainImageData) as ImageSource;
             }
+            this.WindowTitle = "Добавление товара";
+            var provider = AppData.db.Provider.Select(p => p.ProviderName).ToList();
+            TBpost.ItemsSource = provider;
+            var category = AppData.db.Categories.Select(p => p.Category).ToList();
+            TBcat.ItemsSource = category;
         }
         private void BtnSelectImage_Click(object sender, RoutedEventArgs e)
         {
@@ -64,10 +75,13 @@ namespace PCshop.Views
                 tovarimg.Source = new ImageSourceConverter()
                     .ConvertFrom(_mainImageData) as ImageSource;
             }
+
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
+            var category = AppData.db.Categories.Where(a => a.Category == TBcat.SelectedItem.ToString()).FirstOrDefault();
+            var provider = AppData.db.Provider.Where(a => a.ProviderName == TBpost.SelectedItem.ToString()).FirstOrDefault();
             if (img != null)
             {
                 img = TBart.Text + extension;
@@ -94,22 +108,16 @@ namespace PCshop.Views
                     Warranty = TBgar.Text,
                     Price = Int32.Parse(TBprice.Text),
                     Description = TBdes.Text,
+                    IDProvider = provider.ID,
+                    IDCategories = category.ID,
                     image = img
 
                 };
                 AppData.db.Tovar.Add(tovar);
                 AppData.db.SaveChanges();
-                MessageBox.Show("Резюме успешно добавленно!");
+                MessageBox.Show("Товар добавлен!");
             }
-            else if (currentTovar.image != img || currentTovar.TovarName != TBname.Text ||
-                currentTovar.Warranty != TBgar.Text ||
-                currentTovar.Price != Int32.Parse(TBprice.Text) ||
-                currentTovar.Description != TBdes.Text ||
-                currentTovar.Article != Int32.Parse(TBart.Text))
-
-
-
-
+            else
             {
                 currentTovar.image = img;
                 currentTovar.TovarName = TBname.Text;
@@ -117,13 +125,23 @@ namespace PCshop.Views
                 currentTovar.Price = Int32.Parse(TBprice.Text);
                 currentTovar.Description = TBdes.Text;
                 currentTovar.Article = Int32.Parse(TBart.Text);
+                currentTovar.IDProvider = provider.ID;
+                currentTovar.IDCategories = category.ID;
                 AppData.db.SaveChanges();
-                MessageBox.Show("Резюме успешно обновленно!");
+                MessageBox.Show("Товар обновлен!");
                 currentTovar = null;
             }
-            NavigationService.Navigate(new Views.Tovars());
+            Windows.ychet ychet = new Windows.ychet();
+            ychet.Show();
+            Window.GetWindow(this).Close();
         }
 
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Windows.ychet ychet = new Windows.ychet();
+            ychet.Show();
+            Window.GetWindow(this).Close();
+        }
     }
     
 }

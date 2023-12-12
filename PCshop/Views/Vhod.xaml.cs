@@ -44,6 +44,7 @@ namespace PCshop
                         {
                             Windows.ychet admin = new Windows.ychet(); //currentUser.userID
                             admin.Show();
+
                         }
                         else
                         {
@@ -64,8 +65,9 @@ namespace PCshop
                             }
 
                         }
-                        
-                       ;
+                        Window.GetWindow(this).Close();
+
+                        ;
                     }
                 
 
