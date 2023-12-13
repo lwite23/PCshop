@@ -23,11 +23,33 @@ namespace PCshop.Views
     /// </summary>
     public partial class appluser : Page
     {
+        private byte[] _mainImageData = null;
+        public string img = null;
+        public string path = Path.Combine(Directory.GetParent(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName)).FullName, @"Images\");
+        public string selectefFileName;
+        public string extension = "";
+        public Status currentApplication;
+        public Tovar currentTovar;
         public appluser()
         {
             InitializeComponent();
-           var chk = AppData.db.Applications.Select(e => e.Checkk).ToList();
-           
+           var qwe = AppData.db.Status.Select(e => e.Stats).ToList();
+           TBqwe.ItemsSource = qwe;
+        }
+        public appluser(Tovar tovar)
+        {
+            TBart.Text = currentTovar.Article.ToString();
+            if (currentTovar.image != null)
+            {
+                _mainImageData = File.ReadAllBytes(path + currentTovar.image);
+                PCimage.Source = new ImageSourceConverter().ConvertFrom(_mainImageData) as ImageSource;
+            }
+        }
+        public appluser(Status status)
+        {
+            var qwe = AppData.db.Status.Select(e => e.Stats).ToList();
+            TBqwe.ItemsSource = qwe;
+            TBart.Text = currentTovar.Article.ToString();
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
@@ -39,9 +61,13 @@ namespace PCshop.Views
 
         private void BtnSend_Click(object sender, RoutedEventArgs e)
         {
-            
-            var chk = AppData.db.Applications.Where
-            NavigationService.GoBack();
+
+            var chk = AppData.db.Status.Where(a => a.Stats == TBqwe.SelectedItem.ToString());
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

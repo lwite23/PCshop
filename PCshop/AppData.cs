@@ -13,10 +13,11 @@ namespace PCshop
         Tovar, 
         Categories,
         Provider,
-        Applications
+        Applications,
+        Status
     }
     internal class AppData
     {
-        public static PCshopEntities1 db = new PCshopEntities1();
+        public static PCEntities db = new PCEntities();
     }
 }

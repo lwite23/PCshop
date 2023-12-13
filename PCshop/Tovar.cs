@@ -12,7 +12,7 @@ namespace PCshop
     using System;
     using System.Collections.Generic;
     using System.IO;
-
+    
     public partial class Tovar
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -32,7 +32,6 @@ namespace PCshop
         public Nullable<int> IDProvider { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Applications> Applications { get; set; }
         public string correctimage
         {
             get
@@ -48,30 +47,8 @@ namespace PCshop
                 }
             }
         }
-        public string AdminVisibility
-        {
-            get
-            {
-                if (App.CurrentUser == null)
-                    return "Hidden";
-                else if (App.CurrentUser.RoleID == 2)
-                    return "Hidden";
-                else return "Visible";
-            }
-        }
 
-        public string UserVisibility
-        {
-            get
-            {
-                if (App.CurrentUser == null)
-                    return "Hidden";
-                else if (App.CurrentUser.RoleID == 1)
-                    return "Hidden";
-                else return "Visible";
-            }
-        }
-
+        public virtual ICollection<Applications> Applications { get; set; }
         public virtual Categories Categories { get; set; }
         public virtual Provider Provider { get; set; }
     }

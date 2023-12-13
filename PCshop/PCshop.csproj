@@ -68,40 +68,40 @@
     <Compile Include="AppData.cs" />
     <Compile Include="AppFrame.cs" />
     <Compile Include="Applications.cs">
-      <DependentUpon>PCshop.tt</DependentUpon>
+      <DependentUpon>PC.tt</DependentUpon>
     </Compile>
     <Compile Include="Categories.cs">
-      <DependentUpon>PCshop.tt</DependentUpon>
+      <DependentUpon>PC.tt</DependentUpon>
     </Compile>
-    <Compile Include="PCshop.Context.cs">
+    <Compile Include="PC.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PCshop.Context.tt</DependentUpon>
+      <DependentUpon>PC.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="PCshop.cs">
+    <Compile Include="PC.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PCshop.tt</DependentUpon>
+      <DependentUpon>PC.tt</DependentUpon>
     </Compile>
-    <Compile Include="PCshop.Designer.cs">
+    <Compile Include="PC.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PCshop.edmx</DependentUpon>
+      <DependentUpon>PC.edmx</DependentUpon>
     </Compile>
     <Compile Include="Provider.cs">
-      <DependentUpon>PCshop.tt</DependentUpon>
+      <DependentUpon>PC.tt</DependentUpon>
     </Compile>
     <Compile Include="Roles.cs">
-      <DependentUpon>PCshop.tt</DependentUpon>
+      <DependentUpon>PC.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>PCshop.tt</DependentUpon>
+    <Compile Include="Status.cs">
+      <DependentUpon>PC.tt</DependentUpon>
     </Compile>
     <Compile Include="Tovar.cs">
-      <DependentUpon>PCshop.tt</DependentUpon>
+      <DependentUpon>PC.tt</DependentUpon>
     </Compile>
     <Compile Include="Users.cs">
-      <DependentUpon>PCshop.tt</DependentUpon>
+      <DependentUpon>PC.tt</DependentUpon>
     </Compile>
     <Compile Include="Views\Addedittovar.xaml.cs">
       <DependentUpon>Addedittovar.xaml</DependentUpon>
@@ -212,12 +212,12 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <EntityDeploy Include="PCshop.edmx">
+    <EntityDeploy Include="PC.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PCshop.Designer.cs</LastGenOutput>
+      <LastGenOutput>PC.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="PCshop.edmx.diagram">
-      <DependentUpon>PCshop.edmx</DependentUpon>
+    <None Include="PC.edmx.diagram">
+      <DependentUpon>PC.edmx</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -245,15 +245,15 @@
     <Resource Include="Images\pc1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PCshop.Context.tt">
+    <Content Include="PC.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PCshop.edmx</DependentUpon>
-      <LastGenOutput>PCshop.Context.cs</LastGenOutput>
+      <DependentUpon>PC.edmx</DependentUpon>
+      <LastGenOutput>PC.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="PCshop.tt">
+    <Content Include="PC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PCshop.edmx</DependentUpon>
-      <LastGenOutput>PCshop.cs</LastGenOutput>
+      <DependentUpon>PC.edmx</DependentUpon>
+      <LastGenOutput>PC.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

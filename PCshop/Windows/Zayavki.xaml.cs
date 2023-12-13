@@ -26,5 +26,10 @@ namespace PCshop.Windows
             AppFrame.frameZ = zFrame;
             zFrame.Navigate(new Views.appluser());
         }
+
+        private void MainFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+
+        }
     }
 }

@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="185cd4e400864fcfbf7e90694c050848" Name="Diagram1">
-        <EntityTypeShape EntityType="PCshopModel.Applications" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+      <Diagram DiagramId="60e70cc0cc8c45ae8d09c01d060a491c" Name="Diagram1">
+        <EntityTypeShape EntityType="PCshopModel.Applications" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="PCshopModel.Categories" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="PCshopModel.Provider" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="PCshopModel.Roles" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCshopModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCshopModel.Status" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PCshopModel.Tovar" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="PCshopModel.Users" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
         <AssociationConnector Association="PCshopModel.FK_Applications_Tovar" ManuallyRouted="false" />
