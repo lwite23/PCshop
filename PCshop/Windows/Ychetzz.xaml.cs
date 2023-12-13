@@ -15,16 +15,15 @@ using System.Windows.Shapes;
 namespace PCshop.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для Zayavki.xaml
+    /// Логика взаимодействия для Ychetzz.xaml
     /// </summary>
-    public partial class Zayavki : Window
+    public partial class Ychetzz : Window
     {
-        public Zayavki()
+        public Ychetzz()
         {
-            
             InitializeComponent();
-            AppFrame.frameZ = zFrame;
-            zFrame.Navigate(new Views.Zuser());
+            AppFrame.frameYc = yFrame;
+            yFrame.Navigate(new Views.zayavki());
         }
 
         private void MainFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
@@ -32,4 +31,5 @@ namespace PCshop.Windows
 
         }
     }
+    
 }

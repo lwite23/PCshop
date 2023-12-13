@@ -56,8 +56,15 @@ namespace PCshop.Windows
 
         private void DtnAdd_Click(object sender, RoutedEventArgs e)
         {
-           Windows.addeditwnd addeditwnd = new Windows.addeditwnd();
+            Windows.addeditwnd addeditwnd = new Windows.addeditwnd();
             addeditwnd.Show();
+            Window.GetWindow(this).Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Windows.Ychetzz ychetz = new Windows.Ychetzz();
+            ychetz.Show();
             Window.GetWindow(this).Close();
         }
     }

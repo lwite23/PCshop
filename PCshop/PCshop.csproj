@@ -68,46 +68,46 @@
     <Compile Include="AppData.cs" />
     <Compile Include="AppFrame.cs" />
     <Compile Include="Applications.cs">
-      <DependentUpon>PC.tt</DependentUpon>
+      <DependentUpon>pcshop.tt</DependentUpon>
     </Compile>
     <Compile Include="Categories.cs">
-      <DependentUpon>PC.tt</DependentUpon>
+      <DependentUpon>pcshop.tt</DependentUpon>
     </Compile>
-    <Compile Include="PC.Context.cs">
+    <Compile Include="pcshop.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PC.Context.tt</DependentUpon>
+      <DependentUpon>pcshop.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="PC.cs">
+    <Compile Include="pcshop.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PC.tt</DependentUpon>
+      <DependentUpon>pcshop.tt</DependentUpon>
     </Compile>
-    <Compile Include="PC.Designer.cs">
+    <Compile Include="pcshop.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PC.edmx</DependentUpon>
+      <DependentUpon>pcshop.edmx</DependentUpon>
     </Compile>
     <Compile Include="Provider.cs">
-      <DependentUpon>PC.tt</DependentUpon>
+      <DependentUpon>pcshop.tt</DependentUpon>
     </Compile>
     <Compile Include="Roles.cs">
-      <DependentUpon>PC.tt</DependentUpon>
+      <DependentUpon>pcshop.tt</DependentUpon>
     </Compile>
     <Compile Include="Status.cs">
-      <DependentUpon>PC.tt</DependentUpon>
+      <DependentUpon>pcshop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>pcshop.tt</DependentUpon>
     </Compile>
     <Compile Include="Tovar.cs">
-      <DependentUpon>PC.tt</DependentUpon>
+      <DependentUpon>pcshop.tt</DependentUpon>
     </Compile>
     <Compile Include="Users.cs">
-      <DependentUpon>PC.tt</DependentUpon>
+      <DependentUpon>pcshop.tt</DependentUpon>
     </Compile>
     <Compile Include="Views\Addedittovar.xaml.cs">
       <DependentUpon>Addedittovar.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\appluser.xaml.cs">
-      <DependentUpon>appluser.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\korot.xaml.cs">
       <DependentUpon>korot.xaml</DependentUpon>
@@ -124,20 +124,25 @@
     <Compile Include="Views\Vhod.xaml.cs">
       <DependentUpon>Vhod.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\zayavki.xaml.cs">
+      <DependentUpon>zayavki.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Zuser.xaml.cs">
+      <DependentUpon>Zuser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\addeditwnd.xaml.cs">
       <DependentUpon>addeditwnd.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ychet.xaml.cs">
       <DependentUpon>ychet.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Ychetzz.xaml.cs">
+      <DependentUpon>Ychetzz.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Zayavki.xaml.cs">
       <DependentUpon>Zayavki.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\Addedittovar.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\appluser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -154,6 +159,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Tovars.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\zayavki.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Zuser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -188,6 +201,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\Ychetzz.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Zayavki.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -212,12 +229,12 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <EntityDeploy Include="PC.edmx">
+    <EntityDeploy Include="pcshop.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PC.Designer.cs</LastGenOutput>
+      <LastGenOutput>pcshop.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="PC.edmx.diagram">
-      <DependentUpon>PC.edmx</DependentUpon>
+    <None Include="pcshop.edmx.diagram">
+      <DependentUpon>pcshop.edmx</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -245,15 +262,15 @@
     <Resource Include="Images\pc1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PC.Context.tt">
+    <Content Include="pcshop.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PC.edmx</DependentUpon>
-      <LastGenOutput>PC.Context.cs</LastGenOutput>
+      <DependentUpon>pcshop.edmx</DependentUpon>
+      <LastGenOutput>pcshop.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="PC.tt">
+    <Content Include="pcshop.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PC.edmx</DependentUpon>
-      <LastGenOutput>PC.cs</LastGenOutput>
+      <DependentUpon>pcshop.edmx</DependentUpon>
+      <LastGenOutput>pcshop.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

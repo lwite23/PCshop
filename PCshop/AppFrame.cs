@@ -13,5 +13,6 @@ namespace PCshop
         public static Frame frameAuth;
         public static Frame frameWnd;
         public static Frame frameZ;
+        public static Frame frameYc;
     }
 }

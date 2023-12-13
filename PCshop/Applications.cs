@@ -19,6 +19,7 @@ namespace PCshop
         public int IDArticle { get; set; }
         public int IDStatus { get; set; }
     
+        public virtual Status Status { get; set; }
         public virtual Tovar Tovar { get; set; }
         public virtual Users Users { get; set; }
     }

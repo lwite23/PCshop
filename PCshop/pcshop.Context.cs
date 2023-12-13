@@ -13,10 +13,10 @@ namespace PCshop
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PCEntities : DbContext
+    public partial class PCEntities1 : DbContext
     {
-        public PCEntities()
-            : base("name=PCEntities")
+        public PCEntities1()
+            : base("name=PCEntities1")
         {
         }
     
@@ -30,6 +30,7 @@ namespace PCshop
         public virtual DbSet<Provider> Provider { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
         public virtual DbSet<Status> Status { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tovar> Tovar { get; set; }
         public virtual DbSet<Users> Users { get; set; }
     }

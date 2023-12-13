@@ -15,7 +15,7 @@
             <RowDefinition Height="50"/>
 
         </Grid.RowDefinitions>
-        <ListView Height="500" Width="880" Grid.Row="1" Name="Tovarsq" SelectedIndex="-1" d:ItemsSource="{d:SampleData ItemCount=5}">
+        <ListView Height="500" Width="880" Grid.Row="1" Name="Tovarsq" SelectedIndex="-1" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="Tovarsq_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border>

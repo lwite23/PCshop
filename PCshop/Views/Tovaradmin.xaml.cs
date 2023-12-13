@@ -48,5 +48,10 @@ namespace PCshop.Views
                 Update();
             }
         }
+
+        private void Tovarsq_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

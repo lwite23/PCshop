@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="80313af66fdc46e2a2053521fadcc1e0" Name="Diagram1">
+        <EntityTypeShape EntityType="PCModel.Applications" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCModel.Categories" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCModel.Provider" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCModel.Roles" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCModel.Status" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCModel.Tovar" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCModel.Users" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <AssociationConnector Association="PCModel.FK_Applications_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="PCModel.FK_Applications_Tovar" ManuallyRouted="false" />
+        <AssociationConnector Association="PCModel.FK_Applications_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="PCModel.FK_Tovar_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="PCModel.FK_Tovar_Provider" ManuallyRouted="false" />
+        <AssociationConnector Association="PCModel.FK_Users_Roles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

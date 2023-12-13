@@ -18,6 +18,6 @@ namespace PCshop
     }
     internal class AppData
     {
-        public static PCEntities db = new PCEntities();
+        public static PCEntities1 db = new PCEntities1();
     }
 }

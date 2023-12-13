@@ -38,6 +38,7 @@
             <TextBlock HorizontalAlignment="Left" FontWeight="Bold" Margin="114,22,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="30" Grid.RowSpan="2"><Run Text="PCshop"/><LineBreak/><Run/></TextBlock>
             <Button Content="Вернуться ко входу" FontSize="12" Background="white" HorizontalAlignment="Left" Margin="762,11,0,0" Grid.Row="1" VerticalAlignment="Top" Height="28" Width="128" Click="Button_Click"/>
             <Button Grid.Row="3" Background="White" HorizontalAlignment="Left" Margin="566,5,0,5" Content="Добавить товар" Name="BtnAdd" Click="DtnAdd_Click" Width="242"/>
+            <Button Content="Заявки" Background="White" HorizontalAlignment="Left" Margin="110,0,0,0" Grid.Row="3" VerticalAlignment="Center" Height="40" Width="127" Click="Button_Click_1"/>
         </Grid>
     </Border>
 </Window>

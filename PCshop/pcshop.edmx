@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище PCshopModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище PCModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Applications">
           <Key>
             <PropertyRef Name="Application" />
@@ -42,6 +42,16 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Stats" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="Tovar">
           <Key>
             <PropertyRef Name="Article" />
@@ -65,6 +75,18 @@
           <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="RoleID" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Applications_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Applications">
+              <PropertyRef Name="IDStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Applications_Tovar">
           <End Role="Tovar" Type="Self.Tovar" Multiplicity="1" />
           <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
@@ -125,14 +147,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище PCshopModelContainer">
+        <EntityContainer Name="Хранилище PCModelContainer">
           <EntitySet Name="Applications" EntityType="Self.Applications" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Provider" EntityType="Self.Provider" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tovar" EntityType="Self.Tovar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Applications_Status" Association="Self.FK_Applications_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Applications" EntitySet="Applications" />
+          </AssociationSet>
           <AssociationSet Name="FK_Applications_Tovar" Association="Self.FK_Applications_Tovar">
             <End Role="Tovar" EntitySet="Tovar" />
             <End Role="Applications" EntitySet="Applications" />
@@ -158,7 +185,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="PCshopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="PCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Applications">
           <Key>
             <PropertyRef Name="Application" />
@@ -167,6 +194,7 @@
           <Property Name="IDUsers" Type="Int32" />
           <Property Name="IDArticle" Type="Int32" Nullable="false" />
           <Property Name="IDStatus" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Status" Relationship="Self.FK_Applications_Status" FromRole="Applications" ToRole="Status" />
           <NavigationProperty Name="Tovar" Relationship="Self.FK_Applications_Tovar" FromRole="Applications" ToRole="Tovar" />
           <NavigationProperty Name="Users" Relationship="Self.FK_Applications_Users" FromRole="Applications" ToRole="Users" />
         </EntityType>
@@ -200,6 +228,17 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Stats" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Applications" Relationship="Self.FK_Applications_Status" FromRole="Status" ToRole="Applications" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Tovar">
           <Key>
@@ -229,6 +268,18 @@
           <NavigationProperty Name="Applications" Relationship="Self.FK_Applications_Users" FromRole="Users" ToRole="Applications" />
           <NavigationProperty Name="Roles" Relationship="Self.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
         </EntityType>
+        <Association Name="FK_Applications_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Applications">
+              <PropertyRef Name="IDStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Applications_Tovar">
           <End Role="Tovar" Type="Self.Tovar" Multiplicity="1" />
           <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
@@ -289,14 +340,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="PCEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="PCEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Applications" EntityType="Self.Applications" />
           <EntitySet Name="Categories" EntityType="Self.Categories" />
           <EntitySet Name="Provider" EntityType="Self.Provider" />
           <EntitySet Name="Roles" EntityType="Self.Roles" />
           <EntitySet Name="Status" EntityType="Self.Status" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Tovar" EntityType="Self.Tovar" />
           <EntitySet Name="Users" EntityType="Self.Users" />
+          <AssociationSet Name="FK_Applications_Status" Association="Self.FK_Applications_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Applications" EntitySet="Applications" />
+          </AssociationSet>
           <AssociationSet Name="FK_Applications_Tovar" Association="Self.FK_Applications_Tovar">
             <End Role="Tovar" EntitySet="Tovar" />
             <End Role="Applications" EntitySet="Applications" />
@@ -323,9 +379,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище PCshopModelContainer" CdmEntityContainer="PCEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище PCModelContainer" CdmEntityContainer="PCEntities1">
           <EntitySetMapping Name="Applications">
-            <EntityTypeMapping TypeName="PCshopModel.Applications">
+            <EntityTypeMapping TypeName="PCModel.Applications">
               <MappingFragment StoreEntitySet="Applications">
                 <ScalarProperty Name="Application" ColumnName="Application" />
                 <ScalarProperty Name="IDUsers" ColumnName="IDUsers" />
@@ -335,7 +391,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Categories">
-            <EntityTypeMapping TypeName="PCshopModel.Categories">
+            <EntityTypeMapping TypeName="PCModel.Categories">
               <MappingFragment StoreEntitySet="Categories">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Category" ColumnName="Category" />
@@ -343,7 +399,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Provider">
-            <EntityTypeMapping TypeName="PCshopModel.Provider">
+            <EntityTypeMapping TypeName="PCModel.Provider">
               <MappingFragment StoreEntitySet="Provider">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
@@ -351,7 +407,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Roles">
-            <EntityTypeMapping TypeName="PCshopModel.Roles">
+            <EntityTypeMapping TypeName="PCModel.Roles">
               <MappingFragment StoreEntitySet="Roles">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Role" ColumnName="Role" />
@@ -359,15 +415,26 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Status">
-            <EntityTypeMapping TypeName="PCshopModel.Status">
+            <EntityTypeMapping TypeName="PCModel.Status">
               <MappingFragment StoreEntitySet="Status">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Stats" ColumnName="Stats" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PCModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Tovar">
-            <EntityTypeMapping TypeName="PCshopModel.Tovar">
+            <EntityTypeMapping TypeName="PCModel.Tovar">
               <MappingFragment StoreEntitySet="Tovar">
                 <ScalarProperty Name="Article" ColumnName="Article" />
                 <ScalarProperty Name="image" ColumnName="image" />
@@ -382,7 +449,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="PCshopModel.Users">
+            <EntityTypeMapping TypeName="PCModel.Users">
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Login" ColumnName="Login" />
