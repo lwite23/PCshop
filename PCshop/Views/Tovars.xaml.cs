@@ -30,5 +30,17 @@ namespace PCshop.Views
             var content = AppData.db.Tovar.ToList();
             Tovarsq.ItemsSource = content;
         }
+
+        private void Tovarsq_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void BtnUserApp_Click(object sender, RoutedEventArgs e)
+        {
+            Windows.Zayavki zay = new Windows.Zayavki();
+            zay.Show();
+            Window.GetWindow(this).Close();
+        }
     }
 }

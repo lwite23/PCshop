@@ -67,6 +67,9 @@
     <Compile Include="App.cs" />
     <Compile Include="AppData.cs" />
     <Compile Include="AppFrame.cs" />
+    <Compile Include="Applications.cs">
+      <DependentUpon>PCshop.tt</DependentUpon>
+    </Compile>
     <Compile Include="Categories.cs">
       <DependentUpon>PCshop.tt</DependentUpon>
     </Compile>
@@ -91,6 +94,9 @@
     <Compile Include="Roles.cs">
       <DependentUpon>PCshop.tt</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>PCshop.tt</DependentUpon>
+    </Compile>
     <Compile Include="Tovar.cs">
       <DependentUpon>PCshop.tt</DependentUpon>
     </Compile>
@@ -99,6 +105,9 @@
     </Compile>
     <Compile Include="Views\Addedittovar.xaml.cs">
       <DependentUpon>Addedittovar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\appluser.xaml.cs">
+      <DependentUpon>appluser.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\korot.xaml.cs">
       <DependentUpon>korot.xaml</DependentUpon>
@@ -121,7 +130,14 @@
     <Compile Include="Windows\ychet.xaml.cs">
       <DependentUpon>ychet.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Zayavki.xaml.cs">
+      <DependentUpon>Zayavki.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\Addedittovar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\appluser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -169,6 +185,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\ychet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Zayavki.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -223,6 +243,8 @@
     <Resource Include="Images\bp1.jpg" />
     <Resource Include="Images\iconpc.png" />
     <Resource Include="Images\pc1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="PCshop.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PCshop.edmx</DependentUpon>

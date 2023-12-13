@@ -4,12 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8a8682d8bab447e788dff9401598f569" Name="Diagram1">
-        <EntityTypeShape EntityType="PCshopModel.Categories" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCshopModel.Provider" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCshopModel.Roles" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+      <Diagram DiagramId="185cd4e400864fcfbf7e90694c050848" Name="Diagram1">
+        <EntityTypeShape EntityType="PCshopModel.Applications" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCshopModel.Categories" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCshopModel.Provider" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCshopModel.Roles" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCshopModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PCshopModel.Tovar" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="PCshopModel.Users" Width="1.5" PointX="8" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PCshopModel.Users" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <AssociationConnector Association="PCshopModel.FK_Applications_Tovar" ManuallyRouted="false" />
+        <AssociationConnector Association="PCshopModel.FK_Applications_Users" ManuallyRouted="false" />
         <AssociationConnector Association="PCshopModel.FK_Tovar_Categories" ManuallyRouted="false" />
         <AssociationConnector Association="PCshopModel.FK_Tovar_Provider" ManuallyRouted="false" />
         <AssociationConnector Association="PCshopModel.FK_Users_Roles" ManuallyRouted="false" />

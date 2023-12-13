@@ -13,10 +13,10 @@ namespace PCshop
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PCshopEntities : DbContext
+    public partial class PCshopEntities1 : DbContext
     {
-        public PCshopEntities()
-            : base("name=PCshopEntities")
+        public PCshopEntities1()
+            : base("name=PCshopEntities1")
         {
         }
     
@@ -25,9 +25,11 @@ namespace PCshop
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Applications> Applications { get; set; }
         public virtual DbSet<Categories> Categories { get; set; }
         public virtual DbSet<Provider> Provider { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tovar> Tovar { get; set; }
         public virtual DbSet<Users> Users { get; set; }
     }

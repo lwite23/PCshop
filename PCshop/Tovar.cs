@@ -15,6 +15,12 @@ namespace PCshop
 
     public partial class Tovar
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Tovar()
+        {
+            this.Applications = new HashSet<Applications>();
+        }
+    
         public int Article { get; set; }
         public string image { get; set; }
         public string TovarName { get; set; }
@@ -24,7 +30,9 @@ namespace PCshop
         public Nullable<int> Availability { get; set; }
         public Nullable<int> IDCategories { get; set; }
         public Nullable<int> IDProvider { get; set; }
-
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Applications> Applications { get; set; }
         public string correctimage
         {
             get
@@ -38,6 +46,29 @@ namespace PCshop
                 {
                     return path + image;
                 }
+            }
+        }
+        public string AdminVisibility
+        {
+            get
+            {
+                if (App.CurrentUser == null)
+                    return "Hidden";
+                else if (App.CurrentUser.RoleID == 2)
+                    return "Hidden";
+                else return "Visible";
+            }
+        }
+
+        public string UserVisibility
+        {
+            get
+            {
+                if (App.CurrentUser == null)
+                    return "Hidden";
+                else if (App.CurrentUser.RoleID == 1)
+                    return "Hidden";
+                else return "Visible";
             }
         }
 

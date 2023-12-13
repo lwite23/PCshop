@@ -12,21 +12,15 @@ namespace PCshop
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class Applications
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Users()
-        {
-            this.Applications = new HashSet<Applications>();
-        }
+        public int Application { get; set; }
+        public int IDUsers { get; set; }
+        public int IDArticle { get; set; }
+        public System.DateTime Date { get; set; }
+        public bool Checkk { get; set; }
     
-        public int ID { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
-        public int RoleID { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Applications> Applications { get; set; }
-        public virtual Roles Roles { get; set; }
+        public virtual Tovar Tovar { get; set; }
+        public virtual Users Users { get; set; }
     }
 }
