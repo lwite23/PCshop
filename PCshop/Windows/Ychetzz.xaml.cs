@@ -30,6 +30,13 @@ namespace PCshop.Windows
         {
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Windows.ychet ychet = new Windows.ychet();
+            ychet.Show();
+            Window.GetWindow(this).Close();
+        }
     }
     
 }

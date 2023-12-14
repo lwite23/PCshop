@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PCshop.Windows"
         mc:Ignorable="d"
-        Title="addeditwnd" Height="450" Width="800">
-    <Grid>
+        Title="addeditwnd" Height="600" Width="920"
+        WindowStartupLocation="CenterScreen">
+    
+    <Grid Background="#78D6C6">
         <Grid.RowDefinitions>
 
             <RowDefinition Height="*"/>

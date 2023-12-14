@@ -35,5 +35,12 @@ namespace PCshop.Views
         {
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var button = (Button)sender;
+            var currentTovar = button.DataContext as Tovar;
+            NavigationService.Navigate(new Views.Zuser(currentTovar));
+        }
     }
 }

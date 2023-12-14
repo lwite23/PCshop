@@ -10,21 +10,23 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="1"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
+
+
 
         </Grid.RowDefinitions>
-        <ListView Height="500" Width="880" Grid.Row="1" Name="Tovarsq" SelectedIndex="-1" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="Tovarsq_SelectionChanged">
+        <ListView Height="600" Width="900" Grid.Row="2" Name="Tovarsq" SelectedIndex="-1" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="Tovarsq_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border>
                         <Grid HorizontalAlignment="Center">
-                            <Border Width="865" BorderBrush="#12486B" Background="#F5FCCD" BorderThickness="2" CornerRadius="8,8,8,8">
+                            <Border Width="900" BorderBrush="#12486B" Background="#F5FCCD" BorderThickness="2" CornerRadius="8,8,8,8">
 
                                 <StackPanel Orientation="Horizontal">
                                     <StackPanel Orientation="Vertical">
-                                        <Border Margin="5 10 0 0" Width="120" Height="120" BorderBrush="#12486B" BorderThickness="2" CornerRadius="8,8,8,8">
+                                        <Border Background="White" Margin="5 10 0 0" Width="120" Height="120" BorderBrush="#12486B" BorderThickness="2" CornerRadius="8,8,8,8">
                                             <Image  HorizontalAlignment="Center" VerticalAlignment="Center" Height="120" 
                                Width="120"
                                Source="{Binding correctimage}"
@@ -34,7 +36,7 @@
                                         <TextBlock Width="100" FontSize="20" FontWeight="Bold" Margin="0,10,0,0" Text="{Binding Article}" TextAlignment="Center"/>
                                     </StackPanel>
                                     <StackPanel Margin="10" Orientation="Vertical">
-                                        <TextBlock Width="350" FontSize="17" FontWeight="SemiBold" Text="{Binding TovarName}" Margin="0,0,0,10" TextAlignment="Left"/>
+                                        <TextBlock Name="TN" Width="350" FontSize="17" FontWeight="SemiBold" Text="{Binding TovarName}" Margin="0,0,0,10" TextAlignment="Left"/>
                                         <Border Width="350" Height="100" BorderBrush="#12486B" Background="White" BorderThickness="2" CornerRadius="8,8,8,8">
                                             <StackPanel Orientation="Vertical">
 
@@ -77,5 +79,8 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <ComboBox HorizontalAlignment="Left" Margin="619,0,0,0" VerticalAlignment="Center" Width="188" Height="30"/>
+        <TextBox Text="serch"  HorizontalAlignment="Left" Margin="299,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="211" Height="30" TextChanged="TextBox_TextChanged"/>
+
     </Grid>
 </Page>

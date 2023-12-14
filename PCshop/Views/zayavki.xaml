@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PCshop.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="400"
+      d:DesignHeight="300" d:DesignWidth="500"
       Title="zayavki">
 
     <Grid>
@@ -15,34 +15,42 @@
 
 
         </Grid.RowDefinitions>
-        <ListView Grid.Row="1" Name="Tovarsq" SelectedIndex="-1" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="Tovarsq_SelectionChanged" Margin="10,9,10,79">
+        <ListView Grid.Row="1" Name="Tovarsq" SelectedIndex="-1" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="Tovarsq_SelectionChanged" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border>
-                        <Grid HorizontalAlignment="Center" Width="400">
-                            <Border BorderBrush="#12486B" Background="#F5FCCD" BorderThickness="2" CornerRadius="8,8,8,8" Margin="0,0,45,0">
+                        <Grid HorizontalAlignment="Center" Width="470">
+                            <Border BorderBrush="#12486B" Background="#F5FCCD" Width="470" BorderThickness="2" CornerRadius="8,8,8,8">
 
                                 <StackPanel Orientation="Horizontal">
-                                    <StackPanel Orientation="Vertical">
+                                    <StackPanel VerticalAlignment="Center"  Orientation="Vertical">
 
                                         <TextBlock Width="100" FontSize="20" FontWeight="Bold" Text="{Binding IDArticle}" TextAlignment="Center"/>
                                     </StackPanel>
 
-                                    <StackPanel Width="149" VerticalAlignment="Center" Orientation="Horizontal">
-                                        <TextBlock FontSize="20" FontWeight="DemiBold"  Width="139" Text="{Binding Tovar.TovarName}"  TextAlignment="Center"/>
+                                    <StackPanel Width="194" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock VerticalAlignment="Center" FontSize="13" FontWeight="DemiBold"  Width="193" Text="{Binding Tovar.TovarName}"  TextAlignment="Center" RenderTransformOrigin="0.5,0.5" Height="29">
+                                            <TextBlock.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform/>
+                                                    <SkewTransform AngleY="0.565"/>
+                                                    <RotateTransform Angle="-0.489"/>
+                                                    <TranslateTransform X="0.007" Y="0.819"/>
+                                                </TransformGroup>
+                                            </TextBlock.RenderTransform>
+                                        </TextBlock>
                                     </StackPanel>
-                                    <Button Content="Подробнее" RenderTransformOrigin="0.117,-0.027" Height="30" Width="89"/>
-
                                 </StackPanel>
                             </Border>
+                            <Button Content="Удалить" Margin="386,7,17,5" />
+                            <Button Content="Подробнее"  FontSize="12" Click="Button_Click" Margin="305,8,89,6"/>
 
                         </Grid>
                     </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Content="Назад" HorizontalAlignment="Left" Margin="10,240,0,0" Grid.Row="1" VerticalAlignment="Top" Height="39" Width="81"/>
 
     </Grid>
-    
+
 </Page>

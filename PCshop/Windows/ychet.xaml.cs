@@ -1,6 +1,9 @@
-﻿using System;
+﻿using PCshop.Views;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -37,7 +40,7 @@ namespace PCshop.Windows
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
 
         private void MainFrame_Navigated(object sender, NavigationEventArgs e)
@@ -66,6 +69,11 @@ namespace PCshop.Windows
             Windows.Ychetzz ychetz = new Windows.Ychetzz();
             ychetz.Show();
             Window.GetWindow(this).Close();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
         }
     }
 }

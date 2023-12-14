@@ -73,6 +73,7 @@
     <Compile Include="Categories.cs">
       <DependentUpon>pcshop.tt</DependentUpon>
     </Compile>
+    <Compile Include="datahelper.cs" />
     <Compile Include="pcshop.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

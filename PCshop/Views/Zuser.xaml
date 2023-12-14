@@ -5,8 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PCshop.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Zuser">
+      d:DesignHeight="450" d:DesignWidth="900"
+      Title="Zuser" >
 
     <Grid>
         <Grid.RowDefinitions>
@@ -20,20 +20,29 @@
 
         </StackPanel>
 
-        <TextBlock HorizontalAlignment="Left" Margin="237,35,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Артикул:" FontSize="15"  VerticalAlignment="Top" Height="30" Width="63"/>
-        <TextBlock HorizontalAlignment="Left" Margin="237,70,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Название:" FontSize="15" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="237,105,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Гарантия:" FontSize="15" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="237,140,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Цена:" FontSize="15" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="237,175,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Описание:" FontSize="15" VerticalAlignment="Top"/>
-        <TextBox Name="TBcat" HorizontalAlignment="Left" Margin="528,30,0,0" Grid.Row="1" VerticalAlignment="Top" Width="208" Height="31"/>
-        <TextBox Name="TBpost" HorizontalAlignment="Left" Margin="528,66,0,0" Grid.Row="1" VerticalAlignment="Top" Width="208" Height="36"/>
-        <TextBox Name="TBart" HorizontalAlignment="Left" Margin="320,31,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179" Height="30"/>
-        <TextBox Name="TBname" HorizontalAlignment="Left" Margin="320,65,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179" Height="30"/>
-        <TextBox Name="TBgar" HorizontalAlignment="Left" Margin="320,100,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179" Height="30"/>
-        <TextBox Name="TBprice" HorizontalAlignment="Left" Margin="320,135,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180" Height="30"/>
-        <TextBox Name="TBdes" HorizontalAlignment="Left" Margin="320,170,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="416" Height="136"/>
-        
-            <Button HorizontalAlignment="Left" Background="White"
+        <TextBlock HorizontalAlignment="Left" FontWeight="Bold" Margin="237,35,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Артикул:" FontSize="17"  VerticalAlignment="Top" Height="30" Width="63"/>
+        <TextBlock HorizontalAlignment="Left" FontWeight="Bold"  Margin="237,70,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Название:" FontSize="17" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" FontWeight="Bold"  Margin="237,105,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Гарантия:" FontSize="17" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" FontWeight="Bold"  Margin="237,140,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Цена:" FontSize="17" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" FontWeight="Bold"  Margin="237,175,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Описание:" FontSize="17" VerticalAlignment="Top"/>
+        <TextBlock Name="TBcat" HorizontalAlignment="Left" FontSize="17" Margin="682,32,0,0" Grid.Row="1" VerticalAlignment="Top" Width="208" Height="31" RenderTransformOrigin="0.879,0.81" />
+        <TextBlock Name="TBpost" HorizontalAlignment="Left"  FontSize="17" Margin="682,63,0,0" Grid.Row="1" VerticalAlignment="Top" Width="208" Height="36"/>
+        <TextBlock Name="TBart" HorizontalAlignment="Left"  FontSize="17" Margin="329,35,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179" Height="30"/>
+        <TextBlock Name="TBname" HorizontalAlignment="Left" FontSize="17" Margin="329,69,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="326" Height="30" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.083"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock Name="TBgar" HorizontalAlignment="Left" FontSize="17" Margin="329,104,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179" Height="30"/>
+        <TextBlock Name="TBprice" HorizontalAlignment="Left" FontSize="17" Margin="328,139,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180" Height="30"/>
+        <TextBlock Name="TBdes" HorizontalAlignment="Left" FontSize="17" Margin="329,175,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="416" Height="136"/>
+
+        <Button HorizontalAlignment="Left" Background="White"
                 Margin="23,5,0,21"
                 Content="Назад"
                 Click="BtnBack_Click" Grid.Row="0" Width="70"/>
@@ -43,7 +52,7 @@
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Click="BtnSave_Click"
-                    Content="Отправить заявку" Margin="10,343,0,0" Width="158"/>
-        <ComboBox Name="TBqwe" HorizontalAlignment="Left" Margin="528,108,0,0" Grid.Row="1" VerticalAlignment="Top" Width="208" Height="42"/>
+                    Content="Отправить заявку" Margin="12,289,0,0" Width="158"/>
+        <ComboBox Name="TBqwe" HorizontalAlignment="Left" Margin="12,238,0,0" Grid.Row="1" VerticalAlignment="Top" Width="208" Height="42" Text="Выбирите для предзаказа" FontSize="14" FontFamily="Arial" IsEditable="True" IsReadOnly="True"/>
     </Grid>
 </Page>

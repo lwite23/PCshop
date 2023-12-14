@@ -29,6 +29,40 @@ namespace PCshop.Views
         {
             var content = AppData.db.Tovar.ToList();
             Tovarsq.ItemsSource = content;
+            //var tools = App.Context.Products.ToList();
+            //switch (sortBox.SelectedIndex)
+            //{
+            //    case 0:
+            //        tools = tools.OrderBy(t => t.Title).ToList();
+            //        break;
+            //    case 1:
+            //        tools = tools.OrderByDescending(t => t.Title).ToList();
+            //        break;
+            //    case 2:
+            //        tools = tools.OrderBy(t => t.Price).ToList();
+            //        break;
+            //    case 3:
+            //        tools = tools.OrderByDescending(t => t.Price).ToList();
+            //        break;
+            //    default:
+            //        break;
+            //}
+            //if (filterBox.SelectedIndex != 0)
+            //{
+            //    tools = tools.Where(t => t.productTypeName == filterBox.SelectedItem.ToString()).ToList();
+            //}
+            //tools = tools.Where(t => t.Title.ToLower().Contains(searchBox.Text.ToLower()) || t.Description.ToLower().Contains(searchBox.Text.ToLower())).ToList();
+            //var amount = App.Context.Products.ToList().Count;
+            //if (tools.Count == 0)
+            //{
+            //    searchResultBox.Text = "По вашему запросу ничего не найдено";
+            //}
+            //else
+            //{
+            //    searchResultBox.Text = $"Найдено {tools.Count} инструментов из {amount}";
+            //}
+            //toolsListView.ItemsSource = null;
+            //toolsListView.ItemsSource = tools;
         }
 
         private void BtnChange_Click(object sender, RoutedEventArgs e)
@@ -36,6 +70,7 @@ namespace PCshop.Views
             var button = (Button)sender;
             var currentTovar = button.DataContext as Tovar;
             NavigationService.Navigate(new Views.Addedittovar(currentTovar));
+            
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
@@ -50,6 +85,11 @@ namespace PCshop.Views
         }
 
         private void Tovarsq_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
