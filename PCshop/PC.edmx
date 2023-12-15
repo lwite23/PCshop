@@ -10,7 +10,7 @@
             <PropertyRef Name="Application" />
           </Key>
           <Property Name="Application" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IDUsers" Type="int" />
+          <Property Name="IDUsers" Type="int" Nullable="false" />
           <Property Name="IDArticle" Type="int" Nullable="false" />
           <Property Name="IDStatus" Type="int" Nullable="false" />
         </EntityType>
@@ -76,7 +76,9 @@
           <Property Name="RoleID" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Applications_Status">
-          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="Status" Type="Self.Status" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Status">
@@ -88,7 +90,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Applications_Tovar">
-          <End Role="Tovar" Type="Self.Tovar" Multiplicity="1" />
+          <End Role="Tovar" Type="Self.Tovar" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tovar">
@@ -100,7 +104,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Applications_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
@@ -112,7 +118,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tovar_Categories">
-          <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+          <End Role="Categories" Type="Self.Categories" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Tovar" Type="Self.Tovar" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Categories">
@@ -124,7 +132,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tovar_Provider">
-          <End Role="Provider" Type="Self.Provider" Multiplicity="0..1" />
+          <End Role="Provider" Type="Self.Provider" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Tovar" Type="Self.Tovar" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Provider">
@@ -136,7 +146,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Users_Roles">
-          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Roles">
@@ -191,7 +203,7 @@
             <PropertyRef Name="Application" />
           </Key>
           <Property Name="Application" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IDUsers" Type="Int32" />
+          <Property Name="IDUsers" Type="Int32" Nullable="false" />
           <Property Name="IDArticle" Type="Int32" Nullable="false" />
           <Property Name="IDStatus" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Status" Relationship="Self.FK_Applications_Status" FromRole="Applications" ToRole="Status" />
@@ -269,7 +281,9 @@
           <NavigationProperty Name="Roles" Relationship="Self.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
         </EntityType>
         <Association Name="FK_Applications_Status">
-          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="Status" Type="Self.Status" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Status">
@@ -281,7 +295,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Applications_Tovar">
-          <End Role="Tovar" Type="Self.Tovar" Multiplicity="1" />
+          <End Role="Tovar" Type="Self.Tovar" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tovar">
@@ -293,7 +309,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Applications_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
@@ -305,7 +323,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tovar_Categories">
-          <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+          <End Role="Categories" Type="Self.Categories" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Tovar" Type="Self.Tovar" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Categories">
@@ -317,7 +337,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tovar_Provider">
-          <End Role="Provider" Type="Self.Provider" Multiplicity="0..1" />
+          <End Role="Provider" Type="Self.Provider" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Tovar" Type="Self.Tovar" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Provider">
@@ -329,7 +351,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Users_Roles">
-          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Roles">
@@ -340,7 +364,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="PCEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="PCEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Applications" EntityType="Self.Applications" />
           <EntitySet Name="Categories" EntityType="Self.Categories" />
           <EntitySet Name="Provider" EntityType="Self.Provider" />
@@ -379,7 +403,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище PCModelContainer" CdmEntityContainer="PCEntities1">
+        <EntityContainerMapping StorageEntityContainer="Хранилище PCModelContainer" CdmEntityContainer="PCEntities2">
           <EntitySetMapping Name="Applications">
             <EntityTypeMapping TypeName="PCModel.Applications">
               <MappingFragment StoreEntitySet="Applications">

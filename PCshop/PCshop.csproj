@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>free-icon-gaming-pc-9386493.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -68,44 +71,45 @@
     <Compile Include="AppData.cs" />
     <Compile Include="AppFrame.cs" />
     <Compile Include="Applications.cs">
-      <DependentUpon>pcshop.tt</DependentUpon>
+      <DependentUpon>PC.tt</DependentUpon>
     </Compile>
     <Compile Include="Categories.cs">
-      <DependentUpon>pcshop.tt</DependentUpon>
+      <DependentUpon>PC.tt</DependentUpon>
     </Compile>
     <Compile Include="datahelper.cs" />
-    <Compile Include="pcshop.Context.cs">
+    <Compile Include="PC.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>pcshop.Context.tt</DependentUpon>
+      <DependentUpon>PC.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="pcshop.cs">
+    <Compile Include="PC.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>pcshop.tt</DependentUpon>
+      <DependentUpon>PC.tt</DependentUpon>
     </Compile>
-    <Compile Include="pcshop.Designer.cs">
+    <Compile Include="PC.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>pcshop.edmx</DependentUpon>
+      <DependentUpon>PC.edmx</DependentUpon>
     </Compile>
     <Compile Include="Provider.cs">
-      <DependentUpon>pcshop.tt</DependentUpon>
+      <DependentUpon>PC.tt</DependentUpon>
     </Compile>
     <Compile Include="Roles.cs">
-      <DependentUpon>pcshop.tt</DependentUpon>
+      <DependentUpon>PC.tt</DependentUpon>
     </Compile>
     <Compile Include="Status.cs">
-      <DependentUpon>pcshop.tt</DependentUpon>
+      <DependentUpon>PC.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
-      <DependentUpon>pcshop.tt</DependentUpon>
+      <DependentUpon>PC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Tests.cs" />
     <Compile Include="Tovar.cs">
-      <DependentUpon>pcshop.tt</DependentUpon>
+      <DependentUpon>PC.tt</DependentUpon>
     </Compile>
     <Compile Include="Users.cs">
-      <DependentUpon>pcshop.tt</DependentUpon>
+      <DependentUpon>PC.tt</DependentUpon>
     </Compile>
     <Compile Include="Views\Addedittovar.xaml.cs">
       <DependentUpon>Addedittovar.xaml</DependentUpon>
@@ -122,8 +126,14 @@
     <Compile Include="Views\Tovars.xaml.cs">
       <DependentUpon>Tovars.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserPage.xaml.cs">
+      <DependentUpon>UserPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Vhod.xaml.cs">
       <DependentUpon>Vhod.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Zadmins.xaml.cs">
+      <DependentUpon>Zadmins.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\zayavki.xaml.cs">
       <DependentUpon>zayavki.xaml</DependentUpon>
@@ -133,6 +143,9 @@
     </Compile>
     <Compile Include="Windows\addeditwnd.xaml.cs">
       <DependentUpon>addeditwnd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Gost.xaml.cs">
+      <DependentUpon>Gost.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ychet.xaml.cs">
       <DependentUpon>ychet.xaml</DependentUpon>
@@ -163,6 +176,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\UserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Zadmins.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\zayavki.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -176,6 +197,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\Auth.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Gost.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -230,12 +255,12 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <EntityDeploy Include="pcshop.edmx">
+    <EntityDeploy Include="PC.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>pcshop.Designer.cs</LastGenOutput>
+      <LastGenOutput>PC.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="pcshop.edmx.diagram">
-      <DependentUpon>pcshop.edmx</DependentUpon>
+    <None Include="PC.edmx.diagram">
+      <DependentUpon>PC.edmx</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -263,15 +288,21 @@
     <Resource Include="Images\pc1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="pcshop.Context.tt">
+    <Resource Include="Images\title.png" />
+    <Resource Include="Images\zaglushca.png" />
+    <Resource Include="Images\Logoq.png" />
+    <Resource Include="free-icon-gaming-pc-9386493.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PC.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>pcshop.edmx</DependentUpon>
-      <LastGenOutput>pcshop.Context.cs</LastGenOutput>
+      <DependentUpon>PC.edmx</DependentUpon>
+      <LastGenOutput>PC.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="pcshop.tt">
+    <Content Include="PC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>pcshop.edmx</DependentUpon>
-      <LastGenOutput>pcshop.cs</LastGenOutput>
+      <DependentUpon>PC.edmx</DependentUpon>
+      <LastGenOutput>PC.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

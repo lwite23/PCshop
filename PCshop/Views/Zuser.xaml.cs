@@ -46,7 +46,7 @@ namespace PCshop.Views
             TBprice.Text = currentTovar.Price.ToString();
             TBdes.Text = currentTovar.Description;
             TBcat.Text = currentTovar.Categories.Category;
-            TBpost.Text= currentTovar.Provider.ProviderName;
+            TBpost.Text = currentTovar.Provider.ProviderName;
             if (currentTovar.image != null)
             {
                 _mainImageData = File.ReadAllBytes(path + currentTovar.image);
@@ -74,7 +74,8 @@ namespace PCshop.Views
                 Applications application = new Applications()
                 {
                     IDArticle = Int32.Parse(TBart.Text),
-                    IDStatus =qwe.ID
+                    IDStatus = qwe.ID,
+                    IDUsers = App.CurrentUser.ID
                     
 
                 };

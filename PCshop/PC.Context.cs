@@ -13,10 +13,10 @@ namespace PCshop
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PCEntities1 : DbContext
+    public partial class PCEntities2 : DbContext
     {
-        public PCEntities1()
-            : base("name=PCEntities1")
+        public PCEntities2()
+            : base("name=PCEntities2")
         {
         }
     

@@ -14,5 +14,6 @@ namespace PCshop
         public static Frame frameWnd;
         public static Frame frameZ;
         public static Frame frameYc;
+        public static Frame frameGost;
     }
 }

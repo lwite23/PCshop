@@ -25,5 +25,10 @@ namespace PCshop.Windows
             AppFrame.frameAuth = AuthFrame;
             AuthFrame.Navigate(new Vhod());
         }
+
+        private void Window_ImageFailed(object sender, ExceptionRoutedEventArgs e)
+        {
+
+        }
     }
 }

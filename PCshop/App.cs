@@ -10,6 +10,6 @@ namespace PCshop
 {
     public partial class App : Application
     {
-        public static Users CurrentUser = null;
+        public static Users CurrentUser;
     }
 }

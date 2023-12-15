@@ -14,13 +14,13 @@ namespace PCshop
 
         {
             InitializeComponent();
-
+           
         }
 
         private void ResetCaptchaButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow user= new MainWindow();
-            user.Show();
+            Windows.Gost gost= new Windows.Gost();
+            gost.Show();
             Window.GetWindow(this).Close();
         }
 
@@ -29,7 +29,7 @@ namespace PCshop
         {
             try
             {
-                var currentUser = AppData.db.Users.FirstOrDefault((u) => u.Login == TBLogin.Text && u.Password == TBPassword.Text);
+                var currentUser = AppData.db.Users.FirstOrDefault((u) => u.Login == TBLogin.Text && u.Password == TBPassword.Password);
                 if (currentUser == null)
                 {
                     MessageBox.Show("Такого пользователя нет!", "Ошибка авторизации");
@@ -37,7 +37,7 @@ namespace PCshop
                 else
                 {
                     App.CurrentUser = currentUser;
-                    if (currentUser.Login.Equals(TBLogin.Text) && currentUser.Password.Equals(TBPassword.Text))
+                    if (currentUser.Login.Equals(TBLogin.Text) && currentUser.Password.Equals(TBPassword.Password))
                     {
 
                         if (currentUser.RoleID == 1)
@@ -48,7 +48,7 @@ namespace PCshop
                         }
                         else
                         {
-                            if (currentUser.Login.Equals(TBLogin.Text) && currentUser.Password.Equals(TBPassword.Text))
+                            if (currentUser.Login.Equals(TBLogin.Text) && currentUser.Password.Equals(TBPassword.Password))
                             {
 
                                 if (currentUser.RoleID == 2)

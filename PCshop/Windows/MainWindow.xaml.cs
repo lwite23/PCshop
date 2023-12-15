@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PCshop.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,7 @@ namespace PCshop
             InitializeComponent();
             AppFrame.frameMain = MainFrame;
             MainFrame.Navigate(new Views.Tovars());
+            TBUser.Text = App.CurrentUser.Login.ToString();
         }
 
         private void Фильтрация_SelectionChanged(object sender, SelectionChangedEventArgs e)

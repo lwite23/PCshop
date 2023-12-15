@@ -29,40 +29,36 @@ namespace PCshop.Views
         {
             var content = AppData.db.Tovar.ToList();
             Tovarsq.ItemsSource = content;
-            //var tools = App.Context.Products.ToList();
-            //switch (sortBox.SelectedIndex)
-            //{
-            //    case 0:
-            //        tools = tools.OrderBy(t => t.Title).ToList();
-            //        break;
-            //    case 1:
-            //        tools = tools.OrderByDescending(t => t.Title).ToList();
-            //        break;
-            //    case 2:
-            //        tools = tools.OrderBy(t => t.Price).ToList();
-            //        break;
-            //    case 3:
-            //        tools = tools.OrderByDescending(t => t.Price).ToList();
-            //        break;
-            //    default:
-            //        break;
-            //}
-            //if (filterBox.SelectedIndex != 0)
-            //{
-            //    tools = tools.Where(t => t.productTypeName == filterBox.SelectedItem.ToString()).ToList();
-            //}
-            //tools = tools.Where(t => t.Title.ToLower().Contains(searchBox.Text.ToLower()) || t.Description.ToLower().Contains(searchBox.Text.ToLower())).ToList();
-            //var amount = App.Context.Products.ToList().Count;
-            //if (tools.Count == 0)
-            //{
-            //    searchResultBox.Text = "По вашему запросу ничего не найдено";
-            //}
-            //else
-            //{
-            //    searchResultBox.Text = $"Найдено {tools.Count} инструментов из {amount}";
-            //}
-            //toolsListView.ItemsSource = null;
-            //toolsListView.ItemsSource = tools;
+            var tovars = AppData.db.Tovar.ToList();
+            switch (sort.SelectedIndex)
+            {
+                case 0:
+                    tovars = tovars.OrderBy(t => t.TovarName).ToList();
+                    break;
+                case 1:
+                    tovars = tovars.OrderByDescending(t => t.TovarName).ToList();
+                    break;
+                case 2:
+                    tovars = tovars.OrderBy(t => t.Price).ToList();
+                    break;
+                case 3:
+                    tovars = tovars.OrderByDescending(t => t.Price).ToList();
+                    break;
+                default:
+                    break;
+            }
+            tovars = tovars.Where(t => t.TovarName.ToLower().Contains(serch.Text.ToLower()) || t.Description.ToLower().Contains(serch.Text.ToLower())).ToList();
+            var amount = AppData.db.Tovar.ToList().Count;
+            if (tovars.Count == 0)
+            {
+                result.Text = "По вашему запросу ничего не найдено";
+            }
+            else
+            {
+                result.Text = $"Найдено {tovars.Count} товаров из {amount}";
+            }
+            Tovarsq.ItemsSource = null;
+            Tovarsq.ItemsSource = tovars;
         }
 
         private void BtnChange_Click(object sender, RoutedEventArgs e)
@@ -76,6 +72,7 @@ namespace PCshop.Views
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
             var currentTovar = (sender as Button).DataContext as Tovar;
+            var currentApplications = (sender as Button).DataContext as Applications;
             if(MessageBox.Show("Вы уверены что хотите удалить этот товар?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes) 
             {
                 AppData.db.Tovar.Remove(currentTovar);
@@ -91,7 +88,17 @@ namespace PCshop.Views
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            Update();
+        }
 
+        private void filtr_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Update();
+        }
+
+        private void sort_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Update();
         }
     }
 }

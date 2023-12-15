@@ -31,6 +31,7 @@ namespace PCshop.Windows
             InitializeComponent();
             AppFrame.frameMain = MainFrame;
             MainFrame.Navigate(new Views.Tovaradmin());
+            TBUser.Text = App.CurrentUser.Login.ToString();
         }
 
         private void Фильтрация_SelectionChanged(object sender, SelectionChangedEventArgs e)

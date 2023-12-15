@@ -12,6 +12,7 @@ namespace PCshop
     using System;
     using System.Collections.Generic;
     using System.IO;
+    
     public partial class Tovar
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

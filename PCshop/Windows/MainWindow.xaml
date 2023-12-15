@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PCshop"
         mc:Ignorable="d"
-        WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="600" Width="920">
+        WindowStartupLocation="CenterScreen"  ResizeMode="NoResize" ShowInTaskbar="False"
+        Title="Окно пользователя" Height="650" Width="920">
     <Border Background="#78D6C6">
 
         <Grid>
@@ -16,29 +16,12 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
-            <Image Grid.Row="1" Width="79" HorizontalAlignment="Left" Margin="10,0,0,0" Source="/Images/iconpc.png"/>
-            <TextBox  Width="208" FontSize="18" HorizontalAlignment="Left" Margin="308,25,0,35" TextWrapping="Wrap" Grid.Row="1" Visibility="Visible" Cursor="Hand"/>
-            <ComboBox HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="95" SelectionChanged="ComboBox_SelectionChanged" IsEditable="True" IsReadOnly="True" Text="Сортировка" Margin="566,13,0,0"/>
-            <ComboBox Background="#FFCC6600" Name="Фильтрация" HorizontalAlignment="Left" Margin="566,51,0,0" Grid.Row="1" VerticalAlignment="Top" Width="95" Text="Фильтрация" BorderBrush="#FFA73939" SelectionChanged="Фильтрация_SelectionChanged" IsReadOnly="True" IsEditable="True">
-                <ComboBoxItem Content="Процессоры"/>
-                <ComboBoxItem Content="Материнские платы"/>
-                <ComboBoxItem Content="Видеокарты"/>
-                <ComboBoxItem Content="Оперативная память"/>
-                <ComboBoxItem Content="Блоки Питания"/>
-                <ComboBoxItem Content="Корпуса"/>
-                <ComboBoxItem Content="Охлаждение компьютера"/>
-                <ComboBoxItem Content="Твердательные накопители"/>
-                <ComboBoxItem Content="Жеские диски"/>
-                <ComboBoxItem Content="Мониторы"/>
-
-
-            </ComboBox>
+            <Image Grid.Row="1" Width="79" HorizontalAlignment="Left" Margin="10,0,0,0" Source="/Images/Logoq.png"/>
             <Frame Grid.Row="2" NavigationUIVisibility="Hidden" Name="MainFrame" Navigated="MainFrame_Navigated"/>
-            <TextBlock HorizontalAlignment="Left"  Margin="242,21,0,0" Grid.Row="1" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" RenderTransformOrigin="-0.563,0.495"><Run Language="ru-ru" Text="Поиск:"/></TextBlock>
-            <TextBlock HorizontalAlignment="Left" FontWeight="Bold" Margin="114,22,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="30" Grid.RowSpan="2"><Run Text="PCshop"/><LineBreak/><Run/></TextBlock>
             <Button Content="Вернуться ко входу" FontSize="12" Background="white" HorizontalAlignment="Left" Margin="762,11,0,0" Grid.Row="1" VerticalAlignment="Top" Height="28" Width="128" Click="Button_Click"/>
-            <Label Content="Пользователь:" FontSize="15" HorizontalAlignment="Left" Margin="666,50,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-            <TextBlock HorizontalAlignment="Left" Margin="780,53,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="23" Width="115"/>
+            <TextBlock HorizontalAlignment="Left" FontWeight="Bold" Margin="114,22,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" Height="53"><Run Text="Магазин компьютерных комплектующих"/><LineBreak/><Run/></TextBlock>
+            <TextBlock Name="TBUser" HorizontalAlignment="Left" FontSize="20" Margin="767,53,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="25" Width="133"/>
+            <TextBlock HorizontalAlignment="Left" FontSize="20" Margin="630,51,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Пользователь:" VerticalAlignment="Top"/>
         </Grid>
     </Border>
 </Window>

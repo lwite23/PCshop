@@ -15,7 +15,7 @@ namespace PCshop
     public partial class Applications
     {
         public int Application { get; set; }
-        public Nullable<int> IDUsers { get; set; }
+        public int IDUsers { get; set; }
         public int IDArticle { get; set; }
         public int IDStatus { get; set; }
     

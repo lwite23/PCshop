@@ -39,6 +39,41 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Margin" Value="1"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="MinHeight" Value="20"/>
+            <Setter Property="MinWidth" Value="100"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Border x:Name="border"
+                                CornerRadius="2"
+                                BorderBrush="#000"
+                                BorderThickness="1"
+                                Background="#fff"
+>
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                Focusable="false"
+                                HorizontalScrollBarVisibility="Hidden"
+                               VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#909090"/>
+                                <Setter Property="Foreground" Value="DarkGray" />
+                                <Setter Property="FontWeight" Value="Bold" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="true">
+                                <Setter Property="Foreground" Value="#12486B" />
+                                <Setter Property="BorderBrush" TargetName="border" Value="#12486B"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <Style TargetType="Button">
             <Setter Property="Background" Value="#78D6C6"/>
             <Setter Property="Foreground" Value="Black"/>

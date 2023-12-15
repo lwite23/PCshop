@@ -7,14 +7,14 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Addedittovar">
-    <Grid>
+    <Grid Background="#F5FCCD">
         <Grid.RowDefinitions>
             <RowDefinition Height="65"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,14,0,0" Grid.Row="1">
             <Border Margin="5" Width="200" Height="200">
-                <Image Name="tovarimg" Source="/Images/iconpc.png"/>
+                <Image Name="tovarimg" Source="/Images/zaglushca.png"/>
             </Border>
             <Button Name="BtnSelectImage" Content="Добавить изображение" Click="BtnSelectImage_Click"/>
         </StackPanel>
@@ -24,17 +24,17 @@
         <TextBlock HorizontalAlignment="Left" Margin="237,105,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Гарантия:" FontSize="15" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="237,140,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Цена:" FontSize="15" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="237,175,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Описание:" FontSize="15" VerticalAlignment="Top"/>
-        <ComboBox Name="TBcat" HorizontalAlignment="Left" Margin="528,30,0,0" Grid.Row="1" VerticalAlignment="Top" Width="208" Height="31"/>
-        <ComboBox Name="TBpost" HorizontalAlignment="Left" Margin="528,79,0,0" Grid.Row="1" VerticalAlignment="Top" Width="208" Height="36"/>
-        <TextBox Name="TBart" HorizontalAlignment="Left" Margin="320,31,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179" Height="30"/>
-        <TextBox Name="TBname" HorizontalAlignment="Left" Margin="320,65,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179" Height="30"/>
-        <TextBox Name="TBgar" HorizontalAlignment="Left" Margin="320,100,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179" Height="30"/>
-        <TextBox Name="TBprice" HorizontalAlignment="Left" Margin="320,135,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="180" Height="30"/>
+        <ComboBox Name="TBcat" HorizontalAlignment="Left" Margin="571,29,0,0" Grid.Row="1" VerticalAlignment="Top" Width="208" Height="34" IsReadOnly="True" IsEditable="True"/>
+        <ComboBox Name="TBpost" HorizontalAlignment="Left" Margin="571,74,0,0" Grid.Row="1" VerticalAlignment="Top" Width="208" Height="35" IsReadOnly="True" IsEditable="True"/>
+        <TextBox Name="TBart" HorizontalAlignment="Left" Margin="320,31,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="234" Height="30"/>
+        <TextBox Name="TBname" HorizontalAlignment="Left" FontSize="10" Margin="320,65,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="234" Height="30"/>
+        <TextBox Name="TBgar" HorizontalAlignment="Left" Margin="320,100,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="234" Height="30"/>
+        <TextBox Name="TBprice" HorizontalAlignment="Left" Margin="320,135,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="234" Height="30"/>
         <TextBox Name="TBdes" HorizontalAlignment="Left" Margin="320,170,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="416" Height="136"/>
-        <Button HorizontalAlignment="Left" Background="White"
-                Margin="23,5,0,21"
+        <Button HorizontalAlignment="Left" 
+                Margin="22,13,0,21"
                 Content="Назад"
-                Click="BtnBack_Click" Grid.Row="0" Width="70"/>
+                Click="BtnBack_Click" Grid.Row="0" Width="111"/>
         <Button
                     Name="bsave"
                     Grid.Row="1"                  

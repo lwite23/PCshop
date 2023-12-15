@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PCshop.Windows"
         mc:Ignorable="d"
-        Title="Auth" Height="600" Width="920"
-        WindowStartupLocation="CenterScreen">
+        Title="Вход" Height="600" Width="920"
+        WindowStartupLocation="CenterScreen" WindowChrome.IsHitTestVisibleInChrome="False" ResizeMode="NoResize" ShowInTaskbar="False">
     <Grid>
         <Grid.RowDefinitions>
 

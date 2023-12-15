@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PCshop.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="900"
+      d:DesignHeight="650" d:DesignWidth="900"
       Title="Tovaradmin">
 
     <Grid>
@@ -17,12 +17,12 @@
 
 
         </Grid.RowDefinitions>
-        <ListView Height="600" Width="900" Grid.Row="2" Name="Tovarsq" SelectedIndex="-1" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="Tovarsq_SelectionChanged">
+        <ListView Height="450" Width="900" Grid.Row="2" Name="Tovarsq" SelectedIndex="0" d:ItemsSource="{d:SampleData ItemCount=1}" SelectionChanged="Tovarsq_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border>
-                        <Grid HorizontalAlignment="Center">
-                            <Border Width="900" BorderBrush="#12486B" Background="#F5FCCD" BorderThickness="2" CornerRadius="8,8,8,8">
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                            <Border Width="870" BorderBrush="#12486B" Background="#F5FCCD" BorderThickness="2" CornerRadius="8,8,8,8">
 
                                 <StackPanel Orientation="Horizontal">
                                     <StackPanel Orientation="Vertical">
@@ -36,7 +36,7 @@
                                         <TextBlock Width="100" FontSize="20" FontWeight="Bold" Margin="0,10,0,0" Text="{Binding Article}" TextAlignment="Center"/>
                                     </StackPanel>
                                     <StackPanel Margin="10" Orientation="Vertical">
-                                        <TextBlock Name="TN" Width="350" FontSize="17" FontWeight="SemiBold" Text="{Binding TovarName}" Margin="0,0,0,10" TextAlignment="Left"/>
+                                        <TextBlock Name="TN" Width="350" FontSize="14" TextWrapping="Wrap" FontWeight="SemiBold" Text="{Binding TovarName}" Margin="0,0,0,10" TextAlignment="Left" Height="38"/>
                                         <Border Width="350" Height="100" BorderBrush="#12486B" Background="White" BorderThickness="2" CornerRadius="8,8,8,8">
                                             <StackPanel Orientation="Vertical">
 
@@ -47,7 +47,8 @@
                                         </Border>
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock FontSize="15" Width="75" Text="Гарантия:" TextAlignment="Left" Margin="10,0,0,0"/>
-                                            <TextBlock FontSize="15" Width="80"  Text="{Binding Warranty}" Margin="5,0,0,0" TextAlignment="Justify"/>
+                                            <TextBlock FontSize="15" Width="20"  Text="{Binding Warranty}" Margin="5,0,0,0" TextAlignment="Justify"/>
+                                            <TextBlock FontSize="15" Width="75" Text="месяцев" TextAlignment="Left" Margin="10,0,0,0"/>
                                         </StackPanel>
                                     </StackPanel>
 
@@ -63,24 +64,30 @@
                                         </StackPanel>
 
                                     </StackPanel>
-                                    <StackPanel Width="60" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                                        <TextBlock FontSize="20" FontWeight="DemiBold"  Width="60" Text="{Binding Price}"  TextAlignment="Center"/>
+                                    <StackPanel Width="64" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock FontSize="20" FontWeight="DemiBold"  Width="65" Text="{Binding Price}"  TextAlignment="Center"/>
 
                                     </StackPanel>
-                                    <StackPanel Width="15" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center">
-                                        <TextBlock FontSize="20" FontWeight="DemiBold" Width="15" Text="₽" Margin="0,0,0,0"/>
-                                    </StackPanel>
+                                    <StackPanel Width="15" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Border>
                             <Button Content="Изменить" HorizontalAlignment="Left" Margin="585,10,0,0" Grid.Row="3" VerticalAlignment="Top" Click="BtnChange_Click"/>
                             <Button Content="Удалить" Margin="681,10,99,151" Click="BtnDelete_Click"/>
+                            <TextBlock FontSize="20" FontWeight="DemiBold" Width="15" Text="₽" Margin="845,84,10,83"/>
                         </Grid>
                     </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <ComboBox HorizontalAlignment="Left" Margin="619,0,0,0" VerticalAlignment="Center" Width="188" Height="30"/>
-        <TextBox Text="serch"  HorizontalAlignment="Left" Margin="299,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="211" Height="30" TextChanged="TextBox_TextChanged"/>
+        <ComboBox Name="sort" HorizontalAlignment="Left" Margin="328,0,0,0" VerticalAlignment="Center" Width="224" Height="32" SelectionChanged="sort_SelectionChanged" IsEditable="True" IsReadOnly="True" FontSize="15" FontFamily="Yu Gothic UI" Text="Сортировка..." >
+            <ComboBoxItem Content="Название по возрастанию"/>
+            <ComboBoxItem Content="Название по убыванию"/>
+            <ComboBoxItem Content="Цена по возрастанию"/>
+            <ComboBoxItem Content="Цена по убыванию"/>
+        </ComboBox>
+        <TextBox Name="serch"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Width="212" Height="30" TextChanged="TextBox_TextChanged" Margin="88,0,0,0"/>
+        <TextBlock Name="result" HorizontalAlignment="Left" Margin="557,0,0,0" TextWrapping="Wrap" Text="text" FontSize="17" VerticalAlignment="Center" Height="30" Width="333"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22,10,0,0" TextWrapping="Wrap" FontSize="20" Text="Поиск:" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

@@ -95,10 +95,10 @@ namespace PCshop.Views
                 path = path + img;
                 File.Copy(selectefFileName, path);
             }
-            //else if (currentTovar.image != null)
-            //{
-            //    img = currentTovar.image;
-            //}
+            else if (currentTovar.image != null)
+            {
+                img = currentTovar.image;
+            }
             if (currentTovar == null)
             {
                 Tovar tovar = new Tovar()

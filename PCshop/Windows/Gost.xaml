@@ -1,0 +1,26 @@
+﻿<Window x:Class="PCshop.Windows.Gost"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PCshop.Windows"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"  ResizeMode="NoResize" ShowInTaskbar="False"
+        Title="Гостевая страница" Height="650" Width="920">
+    <Border Background="#78D6C6">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="5"/>
+                <RowDefinition Height="85"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="1" Width="79" HorizontalAlignment="Left" Margin="10,0,0,0" Source="/Images/Logoq.png"/>
+            <Frame Grid.Row="2" NavigationUIVisibility="Hidden" Name="GostFrame" Navigated="MainFrame_Navigated"/>
+            <Button Content="Вернуться ко входу" FontSize="12" Background="white" HorizontalAlignment="Left" Margin="762,11,0,0" Grid.Row="1" VerticalAlignment="Top" Height="28" Width="128" Click="Button_Click"/>
+            <TextBlock HorizontalAlignment="Left" FontWeight="Bold" Margin="114,22,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" Height="53"><Run Text="Магазин компьютерных комплектующих"/><LineBreak/><Run/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" FontSize="20" Margin="716,51,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Вы вошли как гость" VerticalAlignment="Top"/>
+        </Grid>
+    </Border>
+</Window>

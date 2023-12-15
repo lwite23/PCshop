@@ -40,7 +40,18 @@ namespace PCshop.Views
         {
             var button = (Button)sender;
             var currentTovar = button.DataContext as Tovar;
-            NavigationService.Navigate(new Views.Zuser(currentTovar));
+            NavigationService.Navigate(new Views.Zadmins(currentTovar));
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var currentApplication = (sender as Button).DataContext as Applications;
+            if (MessageBox.Show("Вы уверены что хотите удалить эту заявку?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                AppData.db.Applications.Remove(currentApplication);
+                AppData.db.SaveChanges();
+                Update();
+            }
         }
     }
 }
